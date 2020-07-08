@@ -1,0 +1,8 @@
+table {
+  width: 100%;
+}
+
+mat-card {
+  width: 90%;
+  justify-content: center;
+}

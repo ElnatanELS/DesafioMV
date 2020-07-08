@@ -29,6 +29,10 @@ public class CnesService {
 		return this.cnesAtivoRepository.finduf();
 	}
 	
+	public Iterable<Cnes> getTipoUnidades() {
+		return this.cnesAtivoRepository.findTipoUnidade();
+	}
+	
 	
 
 }

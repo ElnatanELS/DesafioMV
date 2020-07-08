@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/cnes-ativos")
 @Api(value = "API REST de leitura de CNES Ativos")
+@CrossOrigin(value = "*")
 public class CnesAtivoController {
 	
 	@Autowired
@@ -48,6 +50,12 @@ public class CnesAtivoController {
 	public ResponseEntity<?> getAllCnesPorTipoUnidade(@RequestParam("tipoDeUnidade") String tipoDeUnidade, Pageable pageable){
 		
 		return new ResponseEntity<>(this.cnesService.getAllCnesPorTipoUnidade(tipoDeUnidade, pageable), HttpStatus.OK);
+	}
+	@GetMapping("unidades")
+	@ApiOperation(value = "retorna um lista com todos tipo de unidade ")
+	public ResponseEntity<?> getAllTipoUnidade(){
+		
+		return new ResponseEntity<>(this.cnesService.getTipoUnidades(), HttpStatus.OK);
 	}
 	
 

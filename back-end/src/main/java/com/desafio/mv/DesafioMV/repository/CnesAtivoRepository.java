@@ -14,6 +14,9 @@ public interface CnesAtivoRepository extends PagingAndSortingRepository<Cnes, Lo
 	
 	@Query("select distinct uf from Cnes ca where uf is not null order by uf asc")
 	Iterable<Cnes> finduf();
+	
+	@Query("select distinct tipoUnidade from Cnes ca order by tipoUnidade asc")
+	Iterable<Cnes> findTipoUnidade();
 
 	Page<Cnes> findByuf(String sigla, Pageable pageable);
 	
