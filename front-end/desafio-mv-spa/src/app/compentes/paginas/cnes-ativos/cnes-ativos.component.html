@@ -1,41 +1,52 @@
+<div class="container">
 
+    <div class="row">
+      <p class="h1">Cnes Ativos</p>
+    </div>
+    <div class="row">
+      <mat-card  class="card-body">
+        <table mat-table [dataSource]="dataSource" >
+          <ng-container matColumnDef="codCnes">
+            <th mat-header-cell *matHeaderCellDef>Cod. Cnes</th>
+            <td mat-cell *matCellDef="let element">{{ element.codCnes }}</td>
+          </ng-container>
 
-<div class="mat-elevation-z8">
-  <mat-card-title> Cnes Ativos</mat-card-title>
-  <mat-card>
-  <table mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="nomeFantasia">
+            <th mat-header-cell *matHeaderCellDef>Nome Fantasia</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.nomeFantasia }}
+            </td>
+          </ng-container>
 
+          <ng-container matColumnDef="tipoUnidade">
+            <th mat-header-cell *matHeaderCellDef>Tipo de Unidade</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.tipoUnidade }}
+            </td>
+          </ng-container>
 
-    <ng-container matColumnDef="codCnes">
-      <th mat-header-cell *matHeaderCellDef> Cod. Cnes </th>
-      <td mat-cell *matCellDef="let element"> {{element.codCnes}} </td>
-    </ng-container>
+          <ng-container matColumnDef="detalhe">
+            <th mat-header-cell *matHeaderCellDef>Detalhe</th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-icon-button
+                (click)="abriModalDetalhe(element.codCnes)"
+              >
+                <mat-icon class="mat-18">description</mat-icon>
+              </button>
+            </td>
+          </ng-container>
 
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
 
-
-    <ng-container matColumnDef="nomeFantasia">
-      <th mat-header-cell *matHeaderCellDef> Nome Fantasia </th>
-      <td mat-cell *matCellDef="let element"> {{element.nomeFantasia}} </td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="tipoUnidade">
-      <th mat-header-cell *matHeaderCellDef> Tipo de Unidade </th>
-      <td mat-cell *matCellDef="let element"> {{element.tipoUnidade}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="detalhe">
-      <th mat-header-cell *matHeaderCellDef> Detalhe </th>
-      <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="abriModalDetalhe(element.codCnes)">
-          <mat-icon class="mat-18">description</mat-icon>
-      </button> </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[ 10, 20, 50, 100]" showFirstLastButtons (page)="paginacao(pageEvent = $event)"></mat-paginator>
-</mat-card>
-</div>
+        <mat-paginator
+          [pageSizeOptions]="[10, 20, 50, 100]"
+          showFirstLastButtons
+          (page)="paginacao((pageEvent = $event))"
+        ></mat-paginator>
+      </mat-card>
+    </div>
+  </div>
 

@@ -1,50 +1,70 @@
-<form [formGroup]="form">
-<mat-form-field appearance="fill">
-  <mat-label>Codigo Cnes</mat-label>
-  <input matInput  formControlName="codCnes" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Codigo IBGE</mat-label>
-  <input matInput  formControlName="codIbge" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Nome Fantasia</mat-label>
-  <input matInput  formControlName="nomeFantasia" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Tipo Unidade</mat-label>
-  <input matInput  formControlName="tipoUnidade" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Tipo Gestão</mat-label>
-  <input matInput  formControlName="tipoGestao" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Logradouro</mat-label>
-  <input matInput  formControlName="logradouro" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Numero</mat-label>
-  <input matInput  formControlName="numero" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Bairro</mat-label>
-  <input matInput  formControlName="bairro" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>CEP</mat-label>
-  <input matInput  formControlName="cep" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>UF</mat-label>
-  <input matInput  formControlName="uf" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Municipi</mat-label>
-  <input matInput  formControlName="municipio" disabled>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Telefone</mat-label>
-  <input matInput  formControlName="telefone" disabled>
-</mat-form-field>
-</form>
+<div class="container-fluid">
+  <p class="h1">Detalhes</p>
+  <form [formGroup]="form">
+    <div class="row">
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Codigo Cnes</mat-label>
+        <input matInput formControlName="codCnes" disabled />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Codigo IBGE</mat-label>
+        <input matInput formControlName="codIbge" disabled />
+      </mat-form-field>
+    </div>
+    <div class="row">
+
+        <mat-form-field appearance="fill" class="total">
+          <mat-label>Nome Fantasia</mat-label>
+          <input matInput formControlName="nomeFantasia" disabled />
+        </mat-form-field>
+
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Tipo Unidade</mat-label>
+        <input matInput formControlName="tipoUnidade" disabled />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Tipo Gestão</mat-label>
+        <input matInput formControlName="tipoGestao" disabled />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Logradouro</mat-label>
+        <input matInput formControlName="logradouro" disabled />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Numero</mat-label>
+        <input matInput formControlName="numero" disabled />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro" disabled />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="metade">
+        <mat-label>CEP</mat-label>
+        <input matInput formControlName="cep" disabled />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>UF</mat-label>
+
+        <input matInput formControlName="uf" disabled />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Municipi</mat-label>
+        <input matInput formControlName="municipio" disabled />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" disabled />
+      </mat-form-field>
+    </div>
+  </form>
+</div>

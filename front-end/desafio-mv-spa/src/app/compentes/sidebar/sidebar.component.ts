@@ -12,17 +12,17 @@ export class SidebarComponent implements OnInit {
     {
     label: 'Cnes Ativos',
     rota: '/',
-    icon: "infor"
+    icon: "store_mall_directory"
     },
     {
     label: "Cnes Estados",
     rota: "/cnes-estados",
-    icon: "infor"
+    icon: "map"
     },
     {
       label: "Cnes Tipos de Unidade",
       rota: "/cnes-tipos",
-      icon: "infor"
+      icon: "menu_book"
       }];
 
   constructor() { }

@@ -2,7 +2,7 @@
   <mat-list-item *ngFor="let menu of menus"  [routerLink]="[menu.rota]">
      <a matLine >{{ menu.label }}</a>
      <button mat-icon-button>
-        <mat-icon>menu.icon</mat-icon>
+        <mat-icon>{{menu.icon}}</mat-icon>
      </button>
   </mat-list-item>
 </mat-nav-list>

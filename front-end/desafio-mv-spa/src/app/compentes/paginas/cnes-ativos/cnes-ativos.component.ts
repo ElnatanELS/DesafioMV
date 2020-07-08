@@ -52,6 +52,8 @@ export class CnesAtivosComponent implements OnInit {
     this.cnesService.getCnesId(id).subscribe((result) => {
       this.dialog.open(DetalhesComponent, {
         data: result,
+
+
       });
     });
   }

@@ -12,7 +12,7 @@ import { DetalhesComponent } from '../../modal/detalhes/detalhes.component';
   styleUrls: ['./cnes-estados.component.css']
 })
 export class CnesEstadosComponent implements OnInit {
-  displayedColumns: string[] = ['codCnes', 'nomeFantasia', 'tipoUnidade', "detalhe", "estados"];
+  displayedColumns: string[] = ['codCnes', 'nomeFantasia', 'tipoUnidade', "estados", "detalhe"];
   dataSource = new MatTableDataSource();
 
 
