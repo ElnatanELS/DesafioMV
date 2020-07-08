@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
@@ -6,6 +7,7 @@ import { CnesServiceService } from 'src/app/service/cnes-service.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { DetalhesComponent } from '../../modal/detalhes/detalhes.component';
 
 @Component({
   selector: 'app-cnes-tipo-unidade',
@@ -29,7 +31,8 @@ export class CnesTipoUnidadeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private cnesService: CnesServiceService
+    private cnesService: CnesServiceService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -57,7 +60,11 @@ export class CnesTipoUnidadeComponent implements OnInit {
   }
 
   abriModalDetalhe(id) {
-    console.log(id);
+    this.cnesService.getCnesId(id).subscribe((result) => {
+      this.dialog.open(DetalhesComponent, {
+        data: result,
+      });
+    });
   }
 
   private _filter(value: string): string[] {

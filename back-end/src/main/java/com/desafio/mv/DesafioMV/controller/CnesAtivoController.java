@@ -32,6 +32,12 @@ public class CnesAtivoController {
 		return new ResponseEntity<>(this.cnesService.getAll(pageable), HttpStatus.OK);
 		
 	}
+	@GetMapping("/{id}")
+	@ApiOperation(value = "retorna um lista com todos CNES paginado ")
+	public ResponseEntity<?> getById(@PathVariable(value = "id") Long id) {
+		return new ResponseEntity<>(this.cnesService.getCnesId(id), HttpStatus.OK);
+		
+	}
 	
 	@GetMapping("estados")
 	@ApiOperation(value = "retorna um lista com a sigla de todos estados cadastrados")

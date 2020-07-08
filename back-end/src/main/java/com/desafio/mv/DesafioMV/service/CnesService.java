@@ -1,5 +1,7 @@
 package com.desafio.mv.DesafioMV.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,6 +33,9 @@ public class CnesService {
 	
 	public Iterable<Cnes> getTipoUnidades() {
 		return this.cnesAtivoRepository.findTipoUnidade();
+	}
+	public Optional<Cnes> getCnesId(Long id) {
+		return this.cnesAtivoRepository.findById(id);
 	}
 	
 	

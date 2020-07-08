@@ -1,8 +1,10 @@
+import { MatDialog } from '@angular/material/dialog';
 import { CnesServiceService } from './../../../service/cnes-service.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpParams, HttpClient } from '@angular/common/http';
+import { DetalhesComponent } from '../../modal/detalhes/detalhes.component';
 
 @Component({
   selector: 'app-cnes-estados',
@@ -18,7 +20,7 @@ export class CnesEstadosComponent implements OnInit {
   pageEvent: PageEvent = new PageEvent();
   estado: string;
 
-  constructor(private http: HttpClient, private cnesService: CnesServiceService) { }
+  constructor(private http: HttpClient, private cnesService: CnesServiceService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -40,9 +42,12 @@ export class CnesEstadosComponent implements OnInit {
 
   }
 
-  abriModalDetalhe(id){
-    console.log(id);
-
+  abriModalDetalhe(id) {
+    this.cnesService.getCnesId(id).subscribe((result) => {
+      this.dialog.open(DetalhesComponent, {
+        data: result,
+      });
+    });
   }
   selcionarEstado(estado){
     this.estado = estado;

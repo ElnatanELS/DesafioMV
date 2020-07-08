@@ -37,4 +37,8 @@ export class CnesServiceService {
     return this.http.get(PATH_CNES_UNIDADES);
 
   }
+
+  getCnesId(id){
+    return this.http.get(PATH_CNES + "/" + id);
+  }
 }

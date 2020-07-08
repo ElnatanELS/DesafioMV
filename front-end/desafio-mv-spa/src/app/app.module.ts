@@ -1,3 +1,4 @@
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CnesTipoUnidadeComponent } from './compentes/paginas/cnes-tipo-unidade/cnes-tipo-unidade.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { DetalhesComponent } from './compentes/modal/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {MatInputModule} from '@angular/material/input';
 
     CnesEstadosComponent,
 
-    CnesTipoUnidadeComponent
+    CnesTipoUnidadeComponent,
+
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +58,10 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
